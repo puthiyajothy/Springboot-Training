@@ -19,10 +19,30 @@ public class Employee {
 	}
 	
 	
-	public String getallemployee() {
-		 return this.employeeLocation="badulla";
-		
+	public Employee( String employeeName, String employeeLocation) {
+		this.employeeName = employeeName;
+		this.employeeLocation = employeeLocation;
 	}
+
+	
+
+	public static List<Employee> getAllEmployees() {
+
+		List<Employee> employee = new ArrayList<>();
+		
+		employee.add(new Employee("jothi", "Badulla"));
+		employee.add(new Employee("jothi", "Badulla"));
+		employee.add(new Employee("jothi", "Badulla"));
+		
+		return employee;
+
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [employeeName=" + employeeName + ", employeeLocation=" + employeeLocation + "]";
+	}
+	
 	
 	
 
