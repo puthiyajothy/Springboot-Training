@@ -1,23 +1,36 @@
 package com.java.training.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 
 @Entity
 @Table(name = "employee")
 public class Employee {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer empId;
 	String employeeName;
 	String employeeLocation;
 
+	@OneToMany(mappedBy = "employee",cascade = CascadeType.ALL,fetch = FetchType.EAGER )
+	List<Telephone>telephone;
 	
+	public List<Telephone> getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(List<Telephone> telephone) {
+		this.telephone = telephone;
+	}
 
 	public Integer getEmpId() {
 		return empId;
@@ -49,10 +62,8 @@ public class Employee {
 	}
 
 	public Employee() {
-		
+
 	}
-	
-	
 
 //	public static List<Employee> getAllEmployees() {
 //
@@ -71,5 +82,4 @@ public class Employee {
 //		return "Employee [employeeName=" + employeeName + ", employeeLocation=" + employeeLocation + "]";
 //	}
 
-	
 }
