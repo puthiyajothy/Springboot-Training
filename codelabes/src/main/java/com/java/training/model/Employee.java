@@ -13,15 +13,17 @@ public class Employee {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	Long empId;
+	Integer empId;
 	String employeeName;
 	String employeeLocation;
 
-	public Long getEmpId() {
+	
+
+	public Integer getEmpId() {
 		return empId;
 	}
 
-	public void setEmpId(Long empId) {
+	public void setEmpId(Integer empId) {
 		this.empId = empId;
 	}
 
@@ -45,6 +47,12 @@ public class Employee {
 		this.employeeName = employeeName;
 		this.employeeLocation = employeeLocation;
 	}
+
+	public Employee() {
+		
+	}
+	
+	
 
 //	public static List<Employee> getAllEmployees() {
 //

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.java.training.model.Employee;
@@ -15,7 +16,6 @@ import com.java.training.service.EmployeeService;
 //@RequestMapping("/services")
 public class EmployeeController {
 
-	@SuppressWarnings("unused")
 	@Autowired
 	private EmployeeService employeeservice;
 	
@@ -31,13 +31,13 @@ public class EmployeeController {
 //
 //	}
 	
-	@RequestMapping("/saveemployee")
-	public void saveemployee(@RequestBody Employee employee ) {
-		employeeservice.saveemployee(employee);
+	@RequestMapping(value = "/saveemployee", method = RequestMethod.POST)
+	public Employee saveemployee(@RequestBody Employee employee ) {
+		return employeeservice.saveemployee(employee);
 	}
 	
 
-	@RequestMapping("/getemployee")
+	@RequestMapping(value="/getemployee",method=RequestMethod.GET)
 	public List<Employee>getAllemployee(){
 		return employeeservice.getallemployee();
 	}
