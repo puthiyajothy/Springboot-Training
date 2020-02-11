@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -18,11 +17,19 @@ public class Telephone {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
 	String number;
+	 
 	@ManyToOne
-	@JoinColumn
-	@JsonIgnore
-	Employee employee;
+    @JoinColumn()
+            @JsonIgnore
+                Employee employee;
+	
+	public Employee getEmployee() {
+		return employee;
+	}
 
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -47,6 +54,11 @@ public class Telephone {
 
 	public Telephone() {
 		
+	}
+
+	@Override
+	public String toString() {
+		return "Telephone [id=" + id + ", number=" + number + ", employee=" + employee + "]";
 	}
 	
 
