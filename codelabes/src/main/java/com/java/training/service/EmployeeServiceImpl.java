@@ -21,6 +21,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public Employee saveemployee(Employee employee) {
+		
+		for (Telephone t : employee.getTelephones()) {
+			
+			t.setEmployee(employee);
+			
+		}
 		return employeeRepository.save(employee);
 
 	}
