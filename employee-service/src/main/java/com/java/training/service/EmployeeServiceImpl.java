@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.java.training.model.Employee;
+import com.java.training.model.Telephone;
 import com.java.training.repository.EmployeeRepository;
 
 @Service
