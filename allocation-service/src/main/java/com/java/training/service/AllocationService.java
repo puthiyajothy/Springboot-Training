@@ -11,5 +11,6 @@ public interface AllocationService {
 
 	Allocation saveallocation(Allocation allocation);
 	List<Allocation>getallallocation();
+	List<Allocation> getAllocationbyid(Integer id);
 	
 }
