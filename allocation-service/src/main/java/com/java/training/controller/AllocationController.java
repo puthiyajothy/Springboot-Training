@@ -26,6 +26,12 @@ public class AllocationController {
 	public List<Allocation>getallocation(){
 		return Allocation.getAllallocation();
 	}
+	
+	@RequestMapping(value = "/allocation/{id}", method = RequestMethod.GET)
+    	public List<Allocation> getAllocation(@PathVariable Integer id) {
+        return allocationService.getAllocationbyid(id);
+    }
+
 
 
 }
