@@ -42,6 +42,11 @@ public class EmployeeController {
 // 		return employeeservice.getallemployee();
 		return Employee.getAllEmployees();
 	}
+	
+	@RequestMapping(value = "/employee/{id}", method = RequestMethod.GET)
+	    public Employee getemployee(@PathVariable int id) {
+        return employeeservice.getemployeebyid(id);
+    }
 
 }
 
