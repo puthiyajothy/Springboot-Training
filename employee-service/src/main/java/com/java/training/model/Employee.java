@@ -13,6 +13,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.java.training.shared.Allocation;
+
 import javax.persistence.*;
 
 @Entity
@@ -24,6 +27,24 @@ public class Employee {
 	Integer id;
 	String employeeName;
 	String employeeLocation;
+	
+	Allocation[] allocation;
+
+	public Allocation[] getAllocation() {
+		return allocation;
+	}
+
+	public void setAllocation(Allocation[] allocation) {
+		this.allocation = allocation;
+	}
+
+	public List<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(List<Project> projects) {
+		this.projects = projects;
+	}
 
 	@OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     List<Telephone> telephones;
