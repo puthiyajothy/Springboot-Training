@@ -1,17 +1,11 @@
 package com.java.training.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
 import com.java.training.model.Telephone;
 import com.java.training.repository.TelephoneRepository;
-import com.java.training.service.TelephoneService;
 
 @Controller
 //@RequestMapping("/services")

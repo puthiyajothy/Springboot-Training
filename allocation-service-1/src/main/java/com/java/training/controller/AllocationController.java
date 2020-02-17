@@ -33,7 +33,7 @@ public class AllocationController {
     public Allocation getAllocation(@PathVariable Integer id) {
         return allocationservice.getAllocationbyid(id);
     }
-	@RequestMapping(value = "/employee/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/employeebyid/{id}", method = RequestMethod.GET)
     public Allocation[] getAllocationByEmpId(@PathVariable Integer id) {
         List<Allocation> all = allocationservice.findByEmployee(id);
         return all.toArray(new Allocation[all.size()]);

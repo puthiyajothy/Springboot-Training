@@ -1,10 +1,10 @@
-package com.java.training.shared;
+package com.java.training.model;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-class Allocation {
+public class Allocation {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,13 +53,15 @@ class Allocation {
 		this.project = project;
 	}
 
+	public Allocation() {
+
+	}
+
 //	public static List<Allocation> getAllallocation() {
 //		List<Allocation> allocation = new ArrayList<>();
 //		allocation.add(new Allocation(1, 2012, 2013, "ABC"));
 //		return allocation;
 //
 //	}
-
-	
 
 }

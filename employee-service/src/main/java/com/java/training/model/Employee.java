@@ -14,7 +14,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.java.training.shared.Allocation;
 
 import javax.persistence.*;
 
@@ -29,6 +28,8 @@ public class Employee {
 	String employeeLocation;
 	
 	Allocation[] allocation;
+
+	
 
 	public Allocation[] getAllocation() {
 		return allocation;
@@ -60,16 +61,16 @@ public class Employee {
 	
 	
 	@OneToOne(cascade = CascadeType.ALL)
-    Address addresses;
+    Address address;
 	
-    public Address getAddresses() {
-		return addresses;
+ 
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setAddresses(Address addresses) {
-		this.addresses = addresses;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
-
 
 	public List<Telephone> getTelephones() {
 		return telephones;
@@ -105,15 +106,21 @@ public class Employee {
 	}
 
 
-	public Employee(Integer empId, String employeeName, String employeeLocation, List<Telephone> telephones,Address address,List<Project>project) {
-		super();
+	public Employee(Integer empId, String employeeName, String employeeLocation,List<Telephone> telephones,Address address,List<Project>project) {
+		
 		this.id = empId;
 		this.employeeName = employeeName;
 		this.employeeLocation = employeeLocation;
 		this.telephones = telephones;
-		this.addresses=address;
 		this.projects = project;
+	
 		
+	}
+	
+	
+
+	public Employee(Allocation[] allocation) {
+		this.allocation = allocation;
 	}
 
 	public Employee() {
@@ -127,11 +134,13 @@ public class Employee {
 		List<Project> project = new ArrayList<>();
 		telephone.add(new Telephone(1,"25686465"));
 		project.add(new Project(1,"name",employee));
-		employee.add(new Employee(1,"jothi", "Badulla",telephone,new Address(2,"sdh","dyudtg"),project));
+		employee.add(new Employee(1,"jothi", "Badulla",telephone,new Address(),project));
 		
 		return employee;
 
 	}
+	
+	
 
 //	@Override
 //	public String toString() {

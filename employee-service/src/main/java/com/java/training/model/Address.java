@@ -34,15 +34,10 @@ public class Address {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	@Override
-	public String toString() {
-		return "Address [id=" + id + ", addressone=" + addressone + ", city=" + city + "]";
-	}
-	public Address(Integer id, String addressone, String city) {
-		super();
-		this.id = id;
-		this.addressone = addressone;
-		this.city = city;
+
+	
+	public Address() {
+		
 	}
 	
 
